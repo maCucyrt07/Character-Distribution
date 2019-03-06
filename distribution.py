@@ -36,3 +36,23 @@ Notice about this example:
   in the text and they are listed in the output in alphabetical order.
 * Letters that do not occur in the text are not listed in the output at all.
 """
+text = input ('Please enter a string of text (the bigger the better): ')
+print('The distribution of characters in "'+text+'" is:')
+
+a = text.lower()
+
+letters = []
+freq = []
+for x in "abcdefghijklmnopqrstuvwxyz":
+    if x in a:
+        letters.append(x)
+        freq.append(a.count(x))
+
+freq,letters = (list(t) for t in zip(*sorted(zip(freq, letters))))
+
+order = list((zip(freq,letters)))
+    
+for n in range(len(order),-1,-1):
+    for x in order:
+        if x[0] == n:
+            print(x[0]*x[1])
