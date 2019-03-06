@@ -43,15 +43,14 @@ a = text.lower()
 
 letters = []
 freq = []
+
 for x in "abcdefghijklmnopqrstuvwxyz":
     if x in a:
         letters.append(x)
         freq.append(a.count(x))
-
+        order = list((zip(freq,letters)))
 freq,letters = (list(t) for t in zip(*sorted(zip(freq, letters))))
 
-order = list((zip(freq,letters)))
-    
 for n in range(len(order),-1,-1):
     for x in order:
         if x[0] == n:
