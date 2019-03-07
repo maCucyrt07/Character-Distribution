@@ -38,7 +38,6 @@ Notice about this example:
 """
 text = input ('Please enter a string of text (the bigger the better): ')
 print('The distribution of characters in "'+text+'" is:')
-
 lowercase = text.lower()
 letters = []
 frequency = []
@@ -47,10 +46,12 @@ for x in "abcdefghijklmnopqrstuvwxyz":
     if x in lowercase:
         letters.append(x)
         frequency.append(lowercase.count(x))
-        order = list((zip(frequency,letters)))
-frequency,letters = (list(y) for y in zip(*sorted(zip(frequency, letters))))
 
-for a in range(len(order),-1,-1):
+order = list((zip(frequency,letters)))
+
+for a in range(len(order),0,-1):
     for x in order:
         if x[0] == a:
-            print(x[0]*x[1])
+            print(x[0]*x[-1])
+
+frequency,letters = (list(y) for y in zip(*sorted(zip(frequency, letters))))
