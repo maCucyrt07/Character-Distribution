@@ -39,19 +39,18 @@ Notice about this example:
 text = input ('Please enter a string of text (the bigger the better): ')
 print('The distribution of characters in "'+text+'" is:')
 
-a = text.lower()
-
+lowercase = text.lower()
 letters = []
-freq = []
+frequency = []
 
 for x in "abcdefghijklmnopqrstuvwxyz":
-    if x in a:
+    if x in lowercase:
         letters.append(x)
-        freq.append(a.count(x))
-        order = list((zip(freq,letters)))
-freq,letters = (list(t) for t in zip(*sorted(zip(freq, letters))))
+        frequency.append(lowercase.count(x))
+        order = list((zip(frequency,letters)))
+frequency,letters = (list(y) for y in zip(*sorted(zip(frequency, letters))))
 
-for n in range(len(order),-1,-1):
+for a in range(len(order),-1,-1):
     for x in order:
-        if x[0] == n:
+        if x[0] == a:
             print(x[0]*x[1])
