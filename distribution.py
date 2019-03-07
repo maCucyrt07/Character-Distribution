@@ -1,9 +1,9 @@
 """
 distribution.py
-Author: <your name here>
-Credit: <list sources used, if any>
+Author: maCucyrt07
+Credit: ella
 
-Assignment:
+Assignment: character distribution
 
 Write and submit a Python program (distribution.py) that computes and displays 
 the distribution of characters in a given sample of text.
